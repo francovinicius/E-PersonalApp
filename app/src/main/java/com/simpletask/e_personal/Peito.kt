@@ -1,4 +1,5 @@
 package com.simpletask.e_personal
+
 data class Exercicio(val nome: String, val series: Int, val repeticoes: String)
 
 class TreinoPeito {
@@ -140,4 +141,5 @@ class TreinoPeito {
             )
         }
     }
+
 }
