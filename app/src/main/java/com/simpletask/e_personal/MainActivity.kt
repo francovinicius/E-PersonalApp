@@ -4,6 +4,8 @@ package com.simpletask.e_personal
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.simpletask.e_personal.TreinoPeito.Companion.treinoDefinicao
+import com.simpletask.e_personal.TreinoPeito.Companion.treinoEmagrecimento
 import com.simpletask.e_personal.TreinoPeito.Companion.treinoHipertrofia
 import com.simpletask.e_personal.databinding.ActivityMainBinding
 
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             val grupamentoUmValor = grupamentoUm.text.toString()
             val textTreinoGerado = binding.textTreinoGerado
 
-            if (grupamentoUmValor == "Peito" && objetivoValor == "Hipertrofia") {
+            if (grupamentoUmValor == "Peito" || grupamentoUmValor == "peito" && objetivoValor == "Hipertrofia" || objetivoValor == "hipertrofia") {
                 // Obtenha o ArrayList de exercícios de hipertrofia
                 val exerciciosHipertrofia = treinoHipertrofia()
 
@@ -48,6 +50,48 @@ class MainActivity : AppCompatActivity() {
 
                 // Exiba os exercícios gerados na TextView textTreinoGerado
                 textTreinoGerado.text = exerciciosFormatados
+            }
+            else if (grupamentoUmValor == "Peito" || grupamentoUmValor == "peito" && objetivoValor == "Definição" || objetivoValor == "Definicao" ||
+                objetivoValor == "Definicão" || objetivoValor == "Definiçao" || objetivoValor == "definição" || objetivoValor == "definicao" ||
+                objetivoValor == "definicão" || objetivoValor == "definiçao")   {
+                // Obtenha o ArrayList de exercícios de emagrecimento
+                val exerciciosEmagrecimento = treinoEmagrecimento()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                treinoEmagrecimento().shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = treinoEmagrecimento().take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+            else if (grupamentoUmValor == "Peito" || grupamentoUmValor == "peito" && objetivoValor == "Emagrecimento" || objetivoValor == "emagrecimento") {
+                // Obtenha o ArrayList de exercícios de Definicao
+                val exerciciosEmagrecimento = treinoDefinicao()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                treinoDefinicao().shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = treinoDefinicao().take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+            else {
+                val mensagemNaoEncontrado = "Valor não encontrado"
+                textTreinoGerado.text = mensagemNaoEncontrado
             }
 
 
