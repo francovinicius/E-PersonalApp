@@ -175,7 +175,7 @@
             android:layout_marginStart="5dp"
             android:text="@string/grupamento_um"
             android:textColor="@color/dark_green"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -192,7 +192,7 @@
             android:layout_marginStart="5dp"
             android:text="@string/grupamento_dois"
             android:textColor="@color/dark_green"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
