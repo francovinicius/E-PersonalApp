@@ -26,7 +26,17 @@ class MainActivity : AppCompatActivity() {
         btnGerar.setOnClickListener {
             progressBar.isVisible = true
 
-            treinoPeito()
+            val grupamentoUm = binding.grupamento
+            val grupamentoUmValor = grupamentoUm.text.toString()
+
+            if (grupamentoUmValor == "Peito" || grupamentoUmValor == "peito") {
+                treinoPeito()
+            } else if (grupamentoUmValor == "Costas" || grupamentoUmValor == "costas") {
+                treinoCostas()
+            }
+
+
+
 
 
         }
@@ -76,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                     exerciciosDefinicao.shuffle()
 
                     // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                    val exerciciosAleatorios = TreinoPeito.treinoEmagrecimento().take(5)
+                    val exerciciosAleatorios = TreinoPeito.treinoDefinicao().take(5)
 
                     // Crie uma string para armazenar a lista de exercícios formatados
                     val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
@@ -88,13 +98,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 else if (grupamentoUmValor == "Peito" || grupamentoUmValor == "peito" && objetivoValor == "Emagrecimento" || objetivoValor == "emagrecimento") {
                     // Obtenha o ArrayList de exercícios de Definicao
-                    val exerciciosEmagrecimento = TreinoPeito.treinoDefinicao()
+                    val exerciciosEmagrecimento = TreinoPeito.treinoEmagrecimento()
 
                     // Embaralhe a lista para obter exercícios aleatórios
                     exerciciosEmagrecimento.shuffle()
 
                     // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                    val exerciciosAleatorios = TreinoPeito.treinoDefinicao().take(5)
+                    val exerciciosAleatorios = TreinoPeito.treinoEmagrecimento().take(5)
 
                     // Crie uma string para armazenar a lista de exercícios formatados
                     val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
@@ -115,6 +125,89 @@ class MainActivity : AppCompatActivity() {
             }, 3000)
 
         }
+
+    private fun treinoCostas() {
+        val objetivo = binding.objetivo
+        val grupamentoUm = binding.grupamento
+        val progressBar = binding.progressBar
+        val layoutTreinoGerado = binding.layoutTreinoGerado
+
+        val handler = Handler(Looper.getMainLooper())
+
+        val objetivoValor = objetivo.text.toString()
+        val grupamentoUmValor = grupamentoUm.text.toString()
+        val textTreinoGerado = binding.textTreinoGerado
+
+        handler.postDelayed({
+
+            if (objetivoValor == "Hipertrofia" || objetivoValor == "hipertrofia") {
+                // Obtenha o ArrayList de exercícios de hipertrofia
+                val exerciciosHipertrofia = TreinoCostas.treinoHipertrofiaCostas()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosHipertrofia.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosHipertrofia.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Definição" || objetivoValor == "Definicao" ||
+                objetivoValor == "Definicão" || objetivoValor == "Definiçao" || objetivoValor == "definição" || objetivoValor == "definicao" ||
+                objetivoValor == "definicão" || objetivoValor == "definiçao")   {
+                // Obtenha o ArrayList de exercícios de emagrecimento
+                val exerciciosDefinicao = TreinoCostas.treinoDefinicaoCostas()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosDefinicao.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = TreinoCostas.treinoDefinicaoCostas().take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Emagrecimento" || objetivoValor == "emagrecimento") {
+                // Obtenha o ArrayList de exercícios de Definicao
+                val exerciciosEmagrecimento = TreinoCostas.treinoEmagrecimentoCostas()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosEmagrecimento.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = TreinoCostas.treinoEmagrecimentoCostas().take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+            else {
+                val mensagemNaoEncontrado = "Valor não encontrado"
+                textTreinoGerado.text = mensagemNaoEncontrado
+            }
+
+
+            progressBar.isVisible = false
+            layoutTreinoGerado.isVisible = true
+        }, 3000)
+    }
 }
 
 
