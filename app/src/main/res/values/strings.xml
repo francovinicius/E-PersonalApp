@@ -6,9 +6,10 @@
     <string name="altura">Qual sua Altura:</string>
     <string name="objetivo">Qual seu objetivo:</string>
     <string name="genero">Qual seu gênero:</string>
-    <string name="grupamentoSecundário">Qual grupamento muscular desejado:</string>
+    <string name="grupamentoSecundario">Informe o grupamento secundário:</string>
     <string name="grupamentoPrincipal">Informe o grupamento primário:</string>
     <string name="btn_gerar">Gerar Treino</string>
     <string name="treino">Treino Gerado:</string>
     <string name="grupamento_um">Grupamento Primário:</string>
+    <string name="grupamento_dois">Grupamento Secundário:</string>
 </resources>
