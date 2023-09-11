@@ -289,6 +289,342 @@ class TreinoCostas {
 
 class TreinoPerna {
     companion object {
+        fun treinoHipertrofiaPernas(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Agachamento Livre", 4, "8-10"),
+                Exercicio1("Leg Press 45°", 4, "10-12"),
+                Exercicio1("Afundo com Barra", 4, "10-12"),
+                Exercicio1("Cadeira Extensora", 4, "12-15"),
+                Exercicio1("Stiff", 4, "8-10"),
+                Exercicio1("Mesa Flexora", 4, "12-15"),
+                Exercicio1("Agachamento Hack", 4, "10-12"),
+                Exercicio1("Prensa 45°", 4, "10-12"),
+                Exercicio1("Cadeira Flexora", 4, "12-15"),
+                Exercicio1("Passada com Halteres", 4, "10-12"),
+                Exercicio1("Elevação de Panturrilhas Sentado", 4, "12-15"),
+                Exercicio1("Agachamento com Salto", 4, "8-10"),
+                Exercicio1("Extensão de Quadril no Solo", 4, "12-15"),
+                Exercicio1("Leg Press 90°", 4, "10-12"),
+                Exercicio1("Cadeira Adutora", 4, "12-15"),
+                Exercicio1("Caminhada no Leg Press", 4, "10-12"),
+                Exercicio1("Afundo com Barra Smith", 4, "10-12"),
+                Exercicio1("Cadeira Abdutora", 4, "12-15"),
+                Exercicio1("Agachamento Frontal", 4, "8-10"),
+                Exercicio1("Cadeira Extensora Unilateral", 4, "12-15"),
+                Exercicio1("Mesa Flexora Unilateral", 4, "12-15"),
+                Exercicio1("Step Up", 4, "10-12"),
+                Exercicio1("Elevação de Panturrilhas em Pé", 4, "12-15"),
+                Exercicio1("Agachamento Búlgaro", 4, "10-12"),
+                Exercicio1("Cadeira Flexora Unilateral", 4, "12-15"),
+                Exercicio1("Mesa Flexora 45°", 4, "12-15"),
+                Exercicio1("Agachamento Sumô", 4, "8-10"),
+                Exercicio1("Extensão de Quadril com Halteres", 4, "12-15"),
+                Exercicio1("Máquina de Abdução de Quadril", 4, "12-15"),
+                Exercicio1("Agachamento na Smith Machine", 4, "8-10"),
+                Exercicio1("Prensa 90°", 4, "10-12"),
+                Exercicio1("Afundo com Barra Guiada", 4, "10-12"),
+                Exercicio1("Cadeira Flexora com Máquina", 4, "12-15"),
+                Exercicio1("Hack Machine", 4, "10-12"),
+                Exercicio1("Cadeira Extensora Unilateral", 4, "12-15"),
+                Exercicio1("Leg Press Horizontal", 4, "10-12"),
+                Exercicio1("Elevação de Panturrilhas em Máquina", 4, "12-15"),
+                Exercicio1("Afundo com Halteres", 4, "10-12"),
+                Exercicio1("Mesa Flexora 90°", 4, "12-15"),
+                Exercicio1("Passada no Smith Machine", 4, "10-12"),
+                Exercicio1("Elevação de Panturrilhas Sentado (máquina)", 4, "12-15")
+            )
+        }
+
+        fun treinoDefinicaoPernas(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Agachamento Livre com Barra (peso moderado)", 4, "15-20"),
+                Exercicio1("Leg Press 45° com Pés Juntos", 4, "15-20"),
+                Exercicio1("Afundo com Barra Guiada", 4, "15-20"),
+                Exercicio1("Cadeira Extensora (contração máxima)", 4, "15-20"),
+                Exercicio1("Stiff com Barra (peso moderado)", 4, "15-20"),
+                Exercicio1("Mesa Flexora (contração máxima)", 4, "15-20"),
+                Exercicio1("Agachamento Hack com Barra (peso moderado)", 4, "15-20"),
+                Exercicio1("Prensa 45° com Pés Juntos", 4, "15-20"),
+                Exercicio1("Cadeira Flexora (contração máxima)", 4, "15-20"),
+                Exercicio1("Passada com Halteres (peso moderado)", 4, "15-20"),
+                Exercicio1("Elevação de Panturrilhas Sentado (peso moderado)", 4, "15-20"),
+                Exercicio1("Agachamento com Salto", 4, "15-20"),
+                Exercicio1("Extensão de Quadril no Solo", 4, "15-20"),
+                Exercicio1("Leg Press 90° com Pés Juntos", 4, "15-20"),
+                Exercicio1("Cadeira Abdutora (contração máxima)", 4, "15-20"),
+                Exercicio1("Caminhada no Leg Press", 4, "15-20"),
+                Exercicio1("Afundo com Barra Smith (peso moderado)", 4, "15-20"),
+                Exercicio1("Cadeira Abdutora (contração máxima)", 4, "15-20"),
+                Exercicio1("Agachamento Frontal com Barra (peso moderado)", 4, "15-20"),
+                Exercicio1("Cadeira Extensora Unilateral (contração máxima)", 4, "15-20"),
+                Exercicio1("Mesa Flexora Unilateral (contração máxima)", 4, "15-20"),
+                Exercicio1("Step Up (peso moderado)", 4, "15-20"),
+                Exercicio1("Elevação de Panturrilhas em Pé (peso moderado)", 4, "15-20"),
+                Exercicio1("Agachamento Búlgaro com Halteres (peso moderado)", 4, "15-20"),
+                Exercicio1("Cadeira Flexora Unilateral (contração máxima)", 4, "15-20"),
+                Exercicio1("Mesa Flexora 45° (contração máxima)", 4, "15-20"),
+                Exercicio1("Agachamento Sumô (peso moderado)", 4, "15-20"),
+                Exercicio1("Extensão de Quadril com Halteres (peso moderado)", 4, "15-20"),
+                Exercicio1("Máquina de Abdução de Quadril (contração máxima)", 4, "15-20"),
+                Exercicio1("Agachamento na Smith Machine (peso moderado)", 4, "15-20"),
+                Exercicio1("Prensa 90° com Pés Juntos", 4, "15-20"),
+                Exercicio1("Afundo com Barra Guiada (peso moderado)", 4, "15-20"),
+                Exercicio1("Cadeira Flexora com Máquina (contração máxima)", 4, "15-20"),
+                Exercicio1("Hack Machine com Barra (peso moderado)", 4, "15-20"),
+                Exercicio1("Cadeira Extensora Unilateral (contração máxima)", 4, "15-20"),
+                Exercicio1("Leg Press Horizontal com Pés Juntos", 4, "15-20"),
+                Exercicio1("Elevação de Panturrilhas em Máquina (peso moderado)", 4, "15-20"),
+                Exercicio1("Afundo com Halteres (peso moderado)", 4, "15-20"),
+                Exercicio1("Mesa Flexora 90° (contração máxima)", 4, "15-20"),
+                Exercicio1("Passada no Smith Machine (peso moderado)", 4, "15-20"),
+                Exercicio1("Elevação de Panturrilhas Sentado (máquina, peso moderado)", 4, "15-20")
+            )
+        }
+
+        fun treinoEmagrecimentoPernas(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Esteira (corrida leve)", 1, "20-30 minutos"),
+                Exercicio1("Bicicleta Ergométrica (ritmo moderado)", 1, "20-30 minutos"),
+                Exercicio1("Caminhada ao Ar Livre (ritmo moderado)", 1, "20-30 minutos"),
+                Exercicio1("Subida de Escadas (ritmo moderado)", 1, "20-30 minutos"),
+                Exercicio1("Pular Corda (ritmo moderado)", 1, "20-30 minutos"),
+                Exercicio1("Agachamento Corporal", 4, "15-20 repetições"),
+                Exercicio1("Afundo sem Peso", 4, "15-20 repetições"),
+                Exercicio1("Elevação de Panturrilhas em Pé (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Máquina de Abdução de Quadril (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Máquina de Adução de Quadril (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Leg Press Horizontal (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Cadeira Extensora (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Cadeira Flexora (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Elevação de Panturrilhas Sentado (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Caminhada Lateral (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Agachamento Isométrico (segurar por 30 segundos)", 4, "3 séries"),
+                Exercicio1("Prancha Abdominal (segurar por 30 segundos)", 4, "3 séries"),
+                Exercicio1("Elevação de Pernas em Supino Declinado (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Bicicleta no Chão (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Agachamento com Salto (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Afundo com Salto (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Burpees", 4, "15-20 repetições"),
+                Exercicio1("Mountain Climbers", 4, "15-20 repetições"),
+                Exercicio1("Agachamento com Toque na Ponta dos Pés (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Pular Corda (ritmo rápido)", 1, "20-30 minutos"),
+                Exercicio1("Escalador (Mountain Climbers com ritmo rápido)", 4, "15-20 repetições"),
+                Exercicio1("Salto em Caixa (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Sprint (corrida de alta intensidade por 20-30 segundos)", 4, "4 séries"),
+                Exercicio1("Jump Squat (agachamento com salto)", 4, "15-20 repetições"),
+                Exercicio1("Cadeira Extensora com uma Perna (sem peso)", 4, "15-20 repetições por perna"),
+                Exercicio1("Elevação de Panturrilhas em Pé na Borda (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Agachamento Isométrico com as Costas na Parede (segurar por 30 segundos)", 4, "3 séries"),
+                Exercicio1("Prancha Lateral (segurar por 30 segundos de cada lado)", 4, "3 séries"),
+                Exercicio1("Agachamento com Salto e Giro (sem peso)", 4, "15-20 repetições"),
+                Exercicio1("Lunges com Rotação do Tronco (sem peso)", 4, "15-20 repetições por perna"),
+                Exercicio1("Escada de Agilidade (ritmo moderado)", 1, "20-30 minutos"),
+                Exercicio1("Sprint em Subida (corrida de alta intensidade por 20-30 segundos em subida)", 4, "4 séries"),
+                Exercicio1("Agachamento Isométrico com os Braços Estendidos (segurar por 30 segundos)", 4, "3 séries"),
+                Exercicio1("Bicicleta Ergométrica (treino intervalado, alternando entre alta e baixa intensidade)", 1, "20-30 minutos")
+            )
+        }
 
     }
+}
+
+class TreinoTriceps {
+    companion object {
+        fun treinoHipertrofiaTriceps(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra reta)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra V)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (corda)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra reta)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra V)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (corda)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Testa com Barra Reta (supino fechado)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Testa com Barra W (supino fechado)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Testa com Halteres", 4, "8-10 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada V)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada neutra)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada supinada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada pronada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Kickback com Halteres", 4, "8-10 repetições por braço"),
+                Exercicio1("Tríceps Kickback com Barra", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Kickback com Anilha", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Supinada", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Neutra", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Pronada", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Corda", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Supinada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Pronada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Supinada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Pronada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Supinada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Pronada)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Neutra)", 4, "8-10 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada em Martelo)", 4, "8-10 repetições"),
+                Exercicio1(
+                    "Tríceps Pulley com Barra Reta (Pegada Supinada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra Reta (Pegada Pronada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra V (Pegada Supinada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra V (Pegada Pronada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Supinada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Pronada e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Neutra e Larga)",
+                    4,
+                    "8-10 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada em Martelo e Larga)",
+                    4,
+                    "8-10 repetições"
+                )
+            )
+        }
+
+        fun treinoDefinicaoTriceps(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra reta)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra V)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (corda)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra reta)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra V)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (corda)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Testa com Barra Reta (supino fechado)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Testa com Barra W (supino fechado)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Testa com Halteres", 4, "15-20 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada V)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada neutra)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada supinada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada pronada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Kickback com Halteres", 4, "15-20 repetições por braço"),
+                Exercicio1("Tríceps Kickback com Barra", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Kickback com Anilha", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Supinada", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Neutra", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Pronada", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Corda", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V", 4, "15-20 repetições"),
+                Exercicio1(
+                    "Tríceps Pulley com Barra Reta (Pegada Supinada)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Pronada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Supinada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Pronada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Supinada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Pronada)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Neutra)", 4, "15-20 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada em Martelo)", 4, "15-20 repetições"),
+                Exercicio1(
+                    "Tríceps Pulley com Barra Reta (Pegada Supinada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra Reta (Pegada Pronada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra V (Pegada Supinada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Barra V (Pegada Pronada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Supinada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Pronada e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada Neutra e Larga)",
+                    4,
+                    "15-20 repetições"
+                ),
+                Exercicio1(
+                    "Tríceps Pulley com Corda (Pegada em Martelo e Larga)",
+                    4,
+                    "15-20 repetições"
+                )
+            )
+        }
+
+        fun treinoEmagrecimentoTriceps(): ArrayList<Exercicio1> {
+            return arrayListOf(
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra reta)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (barra V)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Alta (corda)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra reta)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (barra V)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulldown na Polia Baixa (corda)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Testa com Barra Reta (supino fechado)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Testa com Barra W (supino fechado)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Testa com Halteres", 4, "12-15 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada V)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada neutra)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada supinada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps na Máquina (pegada pronada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Kickback com Halteres", 4, "12-15 repetições por braço"),
+                Exercicio1("Tríceps Kickback com Barra", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Kickback com Anilha", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Supinada", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Neutra", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Pegada Pronada", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Supinada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Pronada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Supinada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Pronada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Supinada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Pronada)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Neutra)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada em Martelo)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Supinada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra Reta (Pegada Pronada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Supinada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Barra V (Pegada Pronada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Supinada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Pronada e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada Neutra e Larga)", 4, "12-15 repetições"),
+                Exercicio1("Tríceps Pulley com Corda (Pegada em Martelo e Larga)", 4, "12-15 repetições")
+            )}
+
+        }
 }
