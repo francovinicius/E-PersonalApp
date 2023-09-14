@@ -53,7 +53,9 @@ class MainActivity : AppCompatActivity() {
         } else if (grupamentoUmValor == "Costas") {
             treinoCostas()
         } else if (grupamentoUmValor == "Quadríceps") {
-            treinoPerna()
+            treinoQuadriceps()
+        }else if (grupamentoUmValor == "Posterior") {
+            treinoPosterior()
         }else {
             val mensagemNaoEncontrado = "Valor não encontrado"
             textTreinoGerado.text = mensagemNaoEncontrado
@@ -65,8 +67,8 @@ class MainActivity : AppCompatActivity() {
             val grupamentoUm = binding.grupamentoSpinnerDois
             val grupamentoUmValor = grupamentoUm.selectedItem.toString()
 
-            if (grupamentoUmValor == "Posterior") {
-                treinoPeito()
+            if (grupamentoUmValor == "Glúteo") {
+                treinoGluteo()
             } else if (grupamentoUmValor == "Ombros") {
                 treinoOmbro()
             } else if (grupamentoUmValor == "Tríceps") {
@@ -86,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         val muscleGroupSpinner: Spinner = binding.grupamentoSpinner
 
         // Definindo as opções do Spinner em um ArrayAdapter
-        val muscleGroupOptions = arrayOf("Selecione o Grupamento:", "Peito", "Costas", "Quadríceps")
+        val muscleGroupOptions = arrayOf("Selecione o Grupamento:", "Peito", "Costas", "Quadríceps", "Posterior")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, muscleGroupOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -98,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         val muscleGroupSpinner: Spinner = binding.grupamentoSpinnerDois
 
         // Definindo as opções do Spinner em um ArrayAdapter
-        val muscleGroupOptions = arrayOf("Selecione o Grupamento:", "Posterior", "Ombros", "Tríceps", "Bíceps")
+        val muscleGroupOptions = arrayOf("Selecione o Grupamento:", "Glúteo", "Ombros", "Tríceps", "Bíceps")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, muscleGroupOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -115,7 +117,6 @@ class MainActivity : AppCompatActivity() {
 
         objetiveGroupSpinner.adapter = adapter
     }
-
 
     //treinos
     private fun treinoPeito() {
@@ -275,11 +276,13 @@ class MainActivity : AppCompatActivity() {
         }, 3000)
     }
 
-    private fun treinoPerna() {
+    private fun treinoQuadriceps() {
         val objetivo = binding.objetivoSpinner
+
         val progressBar = binding.progressBar
         val layoutTreinoGerado = binding.layoutTreinoGerado
         val handler = Handler(Looper.getMainLooper())
+
         val objetivoValor = objetivo.selectedItem.toString()
         val textTreinoGerado = binding.textTreinoGerado
 
@@ -287,7 +290,7 @@ class MainActivity : AppCompatActivity() {
 
             if (objetivoValor == "Hipertrofia") {
                 // Obtenha o ArrayList de exercícios de hipertrofia
-                val exerciciosHipertrofia = TreinoPerna.treinoHipertrofiaPernas()
+                val exerciciosHipertrofia = TreinoQuadriceps.treinoQuadricepsHipertrofia()
 
                 // Embaralhe a lista para obter exercícios aleatórios
                 exerciciosHipertrofia.shuffle()
@@ -306,13 +309,13 @@ class MainActivity : AppCompatActivity() {
 
             else if (objetivoValor == "Definição")   {
                 // Obtenha o ArrayList de exercícios de emagrecimento
-                val exerciciosDefinicao = TreinoPerna.treinoDefinicaoPernas()
+                val exerciciosDefinicao = TreinoQuadriceps.treinoQuadricepsDefinicao()
 
                 // Embaralhe a lista para obter exercícios aleatórios
                 exerciciosDefinicao.shuffle()
 
                 // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                val exerciciosAleatorios = TreinoPerna.treinoDefinicaoPernas().take(5)
+                val exerciciosAleatorios = TreinoQuadriceps.treinoQuadricepsDefinicao().take(5)
 
                 // Crie uma string para armazenar a lista de exercícios formatados
                 val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
@@ -325,13 +328,171 @@ class MainActivity : AppCompatActivity() {
 
             else if (objetivoValor == "Emagrecimento") {
                 // Obtenha o ArrayList de exercícios de Definicao
-                val exerciciosEmagrecimento = TreinoPerna.treinoEmagrecimentoPernas()
+                val exerciciosEmagrecimento = TreinoQuadriceps.treinoQuadricepsEmagrecimento()
 
                 // Embaralhe a lista para obter exercícios aleatórios
                 exerciciosEmagrecimento.shuffle()
 
                 // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                val exerciciosAleatorios = TreinoPerna.treinoEmagrecimentoPernas().take(5)
+                val exerciciosAleatorios = TreinoQuadriceps.treinoQuadricepsEmagrecimento().take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+            else {
+                val mensagemNaoEncontrado = "Valor não encontrado"
+                textTreinoGerado.text = mensagemNaoEncontrado
+            }
+
+
+            progressBar.isVisible = false
+            layoutTreinoGerado.isVisible = true
+        }, 3000)
+    }
+
+    private fun treinoPosterior() {
+        val objetivo = binding.objetivoSpinner
+
+        val progressBar = binding.progressBar
+        val layoutTreinoGerado = binding.layoutTreinoGerado
+        val handler = Handler(Looper.getMainLooper())
+
+        val objetivoValor = objetivo.selectedItem.toString()
+        val textTreinoGerado = binding.textTreinoGerado
+
+        handler.postDelayed({
+
+            if (objetivoValor == "Hipertrofia") {
+                // Obtenha o ArrayList de exercícios de hipertrofia
+                val exerciciosHipertrofia = TreinoPosteriorCoxa.treinoPosteriorCoixaHipertrofia()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosHipertrofia.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosHipertrofia.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Definição")   {
+                // Obtenha o ArrayList de exercícios de emagrecimento
+                val exerciciosDefinicao = TreinoPosteriorCoxa.treinoPosteriorCoxaDefinicao()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosDefinicao.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosDefinicao.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Emagrecimento") {
+                // Obtenha o ArrayList de exercícios de Definicao
+                val exerciciosEmagrecimento = TreinoPosteriorCoxa.treinoPosteriorCoxaEmagrecimento()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosEmagrecimento.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosEmagrecimento.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+            else {
+                val mensagemNaoEncontrado = "Valor não encontrado"
+                textTreinoGerado.text = mensagemNaoEncontrado
+            }
+
+
+            progressBar.isVisible = false
+            layoutTreinoGerado.isVisible = true
+        }, 3000)
+    }
+
+    private fun treinoGluteo() {
+        val objetivo = binding.objetivoSpinner
+        val grupamentoUm = binding.grupamentoSpinnerDois
+        val progressBar = binding.progressBar
+        val layoutTreinoGerado = binding.textTreinoGeradoDois
+        val handler = Handler(Looper.getMainLooper())
+        val objetivoValor = objetivo.selectedItem.toString()
+        val grupamentoUmValor = grupamentoUm.selectedItem.toString()
+        val textTreinoGerado = binding.textTreinoGeradoDois
+
+        handler.postDelayed({
+
+            if (objetivoValor == "Hipertrofia") {
+                // Obtenha o ArrayList de exercícios de hipertrofia
+                val exerciciosHipertrofia = TreinoGluteos.treinoGluteosHipertrofia()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosHipertrofia.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosHipertrofia.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Definição")   {
+                // Obtenha o ArrayList de exercícios de emagrecimento
+                val exerciciosDefinicao = TreinoGluteos.treinoGluteosDefinicao()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosDefinicao.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosDefinicao.take(5)
+
+                // Crie uma string para armazenar a lista de exercícios formatados
+                val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                    "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                }
+
+                // Exiba os exercícios gerados na TextView textTreinoGerado
+                textTreinoGerado.text = exerciciosFormatados
+            }
+
+            else if (objetivoValor == "Emagrecimento") {
+                // Obtenha o ArrayList de exercícios de Definicao
+                val exerciciosEmagrecimento = TreinoGluteos.treinoGluteosEmagrecimento()
+
+                // Embaralhe a lista para obter exercícios aleatórios
+                exerciciosEmagrecimento.shuffle()
+
+                // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                val exerciciosAleatorios = exerciciosEmagrecimento.take(5)
 
                 // Crie uma string para armazenar a lista de exercícios formatados
                 val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
