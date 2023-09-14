@@ -60,13 +60,12 @@
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
-            <EditText
-                android:id="@+id/objetivo"
+            <Spinner
+                android:id="@+id/objetivoSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ex: Hipertrofia / Emagrecimento / Definição"
+                android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
-                android:textColorHint="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
@@ -83,13 +82,12 @@
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
-            <EditText
-                android:id="@+id/grupamento"
+            <Spinner
+                android:id="@+id/grupamentoSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ex: Peito / Costas / Perna"
+                android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
-                android:textColorHint="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
@@ -106,19 +104,23 @@
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
-            <EditText
-                android:id="@+id/grupamentoDois"
+            <Spinner
+                android:id="@+id/grupamentoSpinnerDois"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ex: Triceps / Biceps / Ombro"
+                android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
-                android:textColorHint="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_edit"
                 android:textSize="16sp"
                 android:padding="10dp"/>
+
+
+
+
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGerar"
