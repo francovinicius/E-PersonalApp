@@ -1,6 +1,5 @@
 package com.simpletask.e_personal
 
-
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,7 +8,6 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.simpletask.e_personal.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,23 +23,15 @@ class MainActivity : AppCompatActivity() {
         grupamentoSpinnerUm()
         grupamentoSpinnerDois()
 
-
-
         val btnGerar = binding.btnGerar
         val progressBar = binding.progressBar
-        val objetivo = binding.objetivoSpinner
-        val objetivoValor = objetivo.selectedItem.toString()
-
 
         btnGerar.setOnClickListener {
             progressBar.isVisible = true
 
-                grupamentoUm()
-                grupamentoDois()
-
+            grupamentoUm()
+            grupamentoDois()
         }
-
-
 }
 
     //selecionadores dos grupamentos
@@ -50,39 +40,35 @@ class MainActivity : AppCompatActivity() {
         val grupamentoUm = binding.grupamentoSpinner
         val grupamentoUmValor = grupamentoUm.selectedItem.toString()
 
-        if (grupamentoUmValor == "Peito") {
-            treinoPeito()
-        } else if (grupamentoUmValor == "Costas") {
-            treinoCostas()
-        } else if (grupamentoUmValor == "Quadríceps") {
-            treinoQuadriceps()
-        }else if (grupamentoUmValor == "Posterior") {
-            treinoPosterior()
-        }else {
-            val mensagemNaoEncontrado = "Valor não encontrado"
-            textTreinoGerado.text = mensagemNaoEncontrado
+        val mensagemNaoEncontrado = "Valor não encontrado"
+
+        when (grupamentoUmValor) {
+            "Peito" -> treinoPeito()
+            "Costas" -> treinoCostas()
+            "Quadríceps" -> treinoQuadriceps()
+            "Posterior" -> treinoPosterior()
+            else -> textTreinoGerado.text = mensagemNaoEncontrado
+
         }
+
     }
 
     private fun grupamentoDois() {
-            val textTreinoGerado = binding.textTreinoGerado
-            val grupamentoUm = binding.grupamentoSpinnerDois
-            val grupamentoUmValor = grupamentoUm.selectedItem.toString()
+        val textTreinoGerado = binding.textTreinoGerado
+        val grupamentoUm = binding.grupamentoSpinnerDois
+        val grupamentoDoisValor = grupamentoUm.selectedItem.toString()
+        val mensagemNaoEncontrado = "Valor não encontrado"
 
-            if (grupamentoUmValor == "Glúteo") {
-                treinoGluteo()
-            } else if (grupamentoUmValor == "Ombros") {
-                treinoOmbro()
-            } else if (grupamentoUmValor == "Tríceps") {
-                treinoTriceps()
-            }else if (grupamentoUmValor == "Bíceps") {
-                treinoBiceps()
-            }            else {
-                val mensagemNaoEncontrado = "Valor não encontrado"
-                textTreinoGerado.text = mensagemNaoEncontrado
-            }
+        when (grupamentoDoisValor) {
+            "Glúteo" -> treinoGluteo()
+            "Ombros" -> treinoOmbro()
+            "Tríceps" -> treinoTriceps()
+            "Bíceps" -> treinoBiceps()
+            else -> textTreinoGerado.text = mensagemNaoEncontrado
         }
 
+
+        }
 
     //Chamar os spinners
     private fun grupamentoSpinnerUm()
@@ -133,66 +119,66 @@ class MainActivity : AppCompatActivity() {
 
             handler.postDelayed({
 
-                if (objetivoValor == "Hipertrofia") {
-                    // Obtenha o ArrayList de exercícios de hipertrofia
-                    val exerciciosHipertrofia = TreinoPeito.treinoHipertrofia()
+                when (objetivoValor) {
+                    "Hipertrofia" -> {
+                        // Obtenha o ArrayList de exercícios de hipertrofia
+                        val exerciciosHipertrofia = TreinoPeito.treinoHipertrofia()
 
-                    // Embaralhe a lista para obter exercícios aleatórios
-                    exerciciosHipertrofia.shuffle()
+                        // Embaralhe a lista para obter exercícios aleatórios
+                        exerciciosHipertrofia.shuffle()
 
-                    // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                    val exerciciosAleatorios = exerciciosHipertrofia.take(5)
+                        // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                        val exerciciosAleatorios = exerciciosHipertrofia.take(5)
 
-                    // Crie uma string para armazenar a lista de exercícios formatados
-                    val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
-                        "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        // Crie uma string para armazenar a lista de exercícios formatados
+                        val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                            "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        }
+
+                        // Exiba os exercícios gerados na TextView textTreinoGerado
+                        textTreinoGerado.text = exerciciosFormatados
                     }
+                    "Definição" -> {
+                        // Obtenha o ArrayList de exercícios de emagrecimento
+                        val exerciciosDefinicao = TreinoPeito.treinoDefinicao()
 
-                    // Exiba os exercícios gerados na TextView textTreinoGerado
-                    textTreinoGerado.text = exerciciosFormatados
-                }
-                else if (objetivoValor == "Definição")   {
-                    // Obtenha o ArrayList de exercícios de emagrecimento
-                    val exerciciosDefinicao = TreinoPeito.treinoDefinicao()
+                        // Embaralhe a lista para obter exercícios aleatórios
+                        exerciciosDefinicao.shuffle()
 
-                    // Embaralhe a lista para obter exercícios aleatórios
-                    exerciciosDefinicao.shuffle()
+                        // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                        val exerciciosAleatorios = exerciciosDefinicao.take(5)
 
-                    // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                    val exerciciosAleatorios = TreinoPeito.treinoDefinicao().take(5)
+                        // Crie uma string para armazenar a lista de exercícios formatados
+                        val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                            "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        }
 
-                    // Crie uma string para armazenar a lista de exercícios formatados
-                    val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
-                        "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        // Exiba os exercícios gerados na TextView textTreinoGerado
+                        textTreinoGerado.text = exerciciosFormatados
                     }
+                    "Emagrecimento" -> {
+                        // Obtenha o ArrayList de exercícios de Definição
+                        val exerciciosEmagrecimento = TreinoPeito.treinoEmagrecimento()
 
-                    // Exiba os exercícios gerados na TextView textTreinoGerado
-                    textTreinoGerado.text = exerciciosFormatados
-                }
-                else if (objetivoValor == "Emagrecimento") {
-                    // Obtenha o ArrayList de exercícios de Definicao
-                    val exerciciosEmagrecimento = TreinoPeito.treinoEmagrecimento()
+                        // Embaralhe a lista para obter exercícios aleatórios
+                        exerciciosEmagrecimento.shuffle()
 
-                    // Embaralhe a lista para obter exercícios aleatórios
-                    exerciciosEmagrecimento.shuffle()
+                        // Pegue os primeiros 5 exercícios da lista (aleatórios)
+                        val exerciciosAleatorios = exerciciosEmagrecimento.take(5)
 
-                    // Pegue os primeiros 5 exercícios da lista (aleatórios)
-                    val exerciciosAleatorios = TreinoPeito.treinoEmagrecimento().take(5)
+                        // Crie uma string para armazenar a lista de exercícios formatados
+                        val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
+                            "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        }
 
-                    // Crie uma string para armazenar a lista de exercícios formatados
-                    val exerciciosFormatados = exerciciosAleatorios.joinToString("\n") {
-                        "Exercício: ${it.nome}\nSéries: ${it.series}\nRepetições: ${it.repeticoes}\n"
+                        // Exiba os exercícios gerados na TextView textTreinoGerado
+                        textTreinoGerado.text = exerciciosFormatados
                     }
-
-                    // Exiba os exercícios gerados na TextView textTreinoGerado
-                    textTreinoGerado.text = exerciciosFormatados
+                    else -> {
+                        val mensagemNaoEncontrado = "Valor não encontrado"
+                        textTreinoGerado.text = mensagemNaoEncontrado
+                    }
                 }
-                else {
-                    val mensagemNaoEncontrado = "Valor não encontrado"
-                    textTreinoGerado.text = mensagemNaoEncontrado
-                }
-
-
                 progressBar.isVisible = false
                 layoutTreinoGerado.isVisible = true
             }, 3000)
@@ -438,12 +424,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun treinoGluteo() {
         val objetivo = binding.objetivoSpinner
-        val grupamentoUm = binding.grupamentoSpinnerDois
         val progressBar = binding.progressBar
         val layoutTreinoGerado = binding.textTreinoGeradoDois
         val handler = Handler(Looper.getMainLooper())
         val objetivoValor = objetivo.selectedItem.toString()
-        val grupamentoUmValor = grupamentoUm.selectedItem.toString()
         val textTreinoGerado = binding.textTreinoGeradoDois
 
         handler.postDelayed({
@@ -517,14 +501,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun treinoTriceps() {
         val objetivo = binding.objetivoSpinner
-        val grupamentoUm = binding.grupamentoSpinnerDois
         val progressBar = binding.progressBar
         val layoutTreinoGerado = binding.textTreinoGeradoDois
-
         val handler = Handler(Looper.getMainLooper())
-
         val objetivoValor = objetivo.selectedItem.toString()
-        val grupamentoUmValor = grupamentoUm.selectedItem.toString()
         val textTreinoGerado = binding.textTreinoGeradoDois
 
         handler.postDelayed({
@@ -598,14 +578,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun treinoBiceps() {
         val objetivo = binding.objetivoSpinner
-        val grupamentoUm = binding.grupamentoSpinnerDois
         val progressBar = binding.progressBar
         val layoutTreinoGerado = binding.textTreinoGeradoDois
-
         val handler = Handler(Looper.getMainLooper())
-
         val objetivoValor = objetivo.selectedItem.toString()
-        val grupamentoUmValor = grupamentoUm.selectedItem.toString()
         val textTreinoGerado = binding.textTreinoGeradoDois
 
         handler.postDelayed({
@@ -679,14 +655,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun treinoOmbro() {
         val objetivo = binding.objetivoSpinner
-        val grupamentoUm = binding.grupamentoSpinnerDois
         val progressBar = binding.progressBar
         val layoutTreinoGerado = binding.textTreinoGeradoDois
-
         val handler = Handler(Looper.getMainLooper())
-
         val objetivoValor = objetivo.selectedItem.toString()
-        val grupamentoUmValor = grupamentoUm.selectedItem.toString()
         val textTreinoGerado = binding.textTreinoGeradoDois
 
         handler.postDelayed({
@@ -758,9 +730,4 @@ class MainActivity : AppCompatActivity() {
         }, 3000)
     }
 
-
-
-
 }
-
-
