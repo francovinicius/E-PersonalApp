@@ -29,13 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         val btnGerar = binding.btnGerar
         val progressBar = binding.progressBar
+        val objetivo = binding.objetivoSpinner
+        val objetivoValor = objetivo.selectedItem.toString()
 
 
         btnGerar.setOnClickListener {
             progressBar.isVisible = true
 
-            grupamentoUm()
-            grupamentoDois()
+                grupamentoUm()
+                grupamentoDois()
 
         }
 
@@ -755,6 +757,7 @@ class MainActivity : AppCompatActivity() {
             layoutTreinoGerado.isVisible = true
         }, 3000)
     }
+
 
 
 
