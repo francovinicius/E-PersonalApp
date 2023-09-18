@@ -1017,14 +1017,6 @@ class TreinoPosteriorCoxa {
 
         fun treinoPosteriorCoxaEmagrecimento(): ArrayList<Exercicio1> {
             return arrayListOf(
-                Exercicio1("Corrida", 3, "15-20 minutos"),
-                Exercicio1("Caminhada Rápida", 3, "15-20 minutos"),
-                Exercicio1("Bicicleta Ergométrica", 3, "15-20 minutos"),
-                Exercicio1("Escada", 3, "15-20 minutos"),
-                Exercicio1("Natação", 3, "15-20 minutos"),
-                Exercicio1("Remo", 3, "15-20 minutos"),
-                Exercicio1("Esteira", 3, "15-20 minutos"),
-                Exercicio1("Elíptico", 3, "15-20 minutos"),
                 Exercicio1("Agachamento com Peso Corporal", 3, "12-15 repetições"),
                 Exercicio1("Afundo com Peso Corporal", 3, "12-15 repetições"),
                 Exercicio1("Prancha", 3, "30-60 segundos"),
@@ -1105,14 +1097,6 @@ class TreinoGluteos {
 
         fun treinoGluteosEmagrecimento(): ArrayList<Exercicio1> {
             return arrayListOf(
-                Exercicio1("Caminhada Rápida", 3, "15-20 minutos"),
-                Exercicio1("Corrida", 3, "15-20 minutos"),
-                Exercicio1("Escada", 3, "15-20 minutos"),
-                Exercicio1("Bicicleta Ergométrica", 3, "15-20 minutos"),
-                Exercicio1("Natação", 3, "15-20 minutos"),
-                Exercicio1("Remo", 3, "15-20 minutos"),
-                Exercicio1("Esteira", 3, "15-20 minutos"),
-                Exercicio1("Elíptico", 3, "15-20 minutos"),
                 Exercicio1("Agachamento com Peso Corporal", 3, "12-15 repetições"),
                 Exercicio1("Afundo com Peso Corporal", 3, "12-15 repetições"),
                 Exercicio1("Prancha", 3, "30-60 segundos"),
@@ -1191,6 +1175,3 @@ class TreinoGluteos {
         }
     }
 }
-
-
-
