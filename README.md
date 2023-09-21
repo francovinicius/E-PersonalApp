@@ -17,7 +17,7 @@ O E-personal App inclui as seguintes funcionalidades principais:
 ### Geração de Treinos Aleatórios
 Você pode escolher até dois grupos musculares primários e secundários para o seu treino. Por exemplo:
 - Primário: Peito
-- Secundário: Costas
+- Secundário: Ombros
 
 O aplicativo então irá gerar um plano de treino aleatório que visa os grupos musculares selecionados. Essa funcionalidade adiciona variedade à sua rotina de exercícios e mantém seus treinos interessantes.
 
