@@ -6,6 +6,9 @@
     <color name="dark_green">#183D3D</color>
     <color name="dark_blue">#14213D</color>
     <color name="light_blue">#ADC4CE</color>
-    <color name="light_gray">#E5E5E5</color>
+    <color name="neon_gray">#01E8AA</color>
+    <color name="dark_gray">#373737</color>
+    <color name="light_gray">#BAB8B8</color>
+    <color name="gray">#939695</color>
 
 </resources>
