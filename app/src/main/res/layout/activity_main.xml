@@ -71,7 +71,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_edit"
                 android:textSize="16sp"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:theme="@style/SpinnerPersonalizado"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,7 +94,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_edit"
                 android:textSize="16sp"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:theme="@style/SpinnerPersonalizado"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,7 +117,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_edit"
                 android:textSize="16sp"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:theme="@style/SpinnerPersonalizado"/>
 
 
 

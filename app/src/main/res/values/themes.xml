@@ -2,8 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.EPersonal" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/black</item>
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textColor">@color/light_gray</item>
+
+    </style>
+
+    <style name="SpinnerPersonalizado" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:background">@color/dark_gray</item>
+
     </style>
 
     <style name="Theme.EPersonal" parent="Base.Theme.EPersonal" />
