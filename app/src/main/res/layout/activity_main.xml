@@ -20,6 +20,7 @@
             android:layout_width="469dp"
             android:layout_height="206dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/e_personal_logo" />
 
         <TextView

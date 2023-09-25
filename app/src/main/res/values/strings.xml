@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">E-Personal</string>
-    <string name="bem_vindo">"Monte Seu Treino Personalizado em Segundos!!"</string>
+    <string name="bem_vindo">"Treinos instantâneos, resultados duradouros."</string>
     <string name="info">Informações:</string>
     <string name="peso">Qual seu peso:</string>
     <string name="altura">Qual sua Altura:</string>
