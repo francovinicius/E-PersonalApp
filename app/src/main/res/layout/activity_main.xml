@@ -64,13 +64,13 @@
             <Spinner
                 android:id="@+id/objetivoSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_edit"
+                android:background="@drawable/btn_spinner"
                 android:textSize="16sp"
                 android:padding="10dp"
                 android:theme="@style/SpinnerPersonalizado"/>
@@ -87,13 +87,13 @@
             <Spinner
                 android:id="@+id/grupamentoSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_edit"
+                android:background="@drawable/btn_spinner"
                 android:textSize="16sp"
                 android:padding="10dp"
                 android:theme="@style/SpinnerPersonalizado"/>
@@ -110,13 +110,13 @@
             <Spinner
                 android:id="@+id/grupamentoSpinnerDois"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Selecione um grupo muscular"
                 android:textColor="@color/dark_blue"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_edit"
+                android:background="@drawable/btn_spinner"
                 android:textSize="16sp"
                 android:padding="10dp"
                 android:theme="@style/SpinnerPersonalizado"/>
