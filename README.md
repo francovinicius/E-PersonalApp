@@ -1,5 +1,4 @@
-![imgApp](https://github.com/francovinicius/E-PersonalApp/blob/main/EpersonalApp.svg)
-
+# E personal
 O E-personal App é um aplicativo desenvolvido em Kotlin, projetado para gerar treinos aleatórios para grupos musculares. Este aplicativo é uma ferramenta útil para entusiastas de fitness que desejam diversificar suas rotinas de exercícios, bem como para professores de educação física habilitados que desejam auxiliar na criação de treinos personalizados para seus alunos.
 
 ## Objetivo
